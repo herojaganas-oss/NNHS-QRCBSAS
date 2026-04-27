@@ -1,0 +1,104 @@
+================================================================================
+  NNHS ATTENDANCE SYSTEM - QUICK SETUP GUIDE
+================================================================================
+
+STEP 1: INSTALL MYSQL
+  • Download XAMPP (https://www.apachefriends.org/)
+  • Install and start MySQL from XAMPP Control Panel
+  
+STEP 2: SETUP DATABASE
+  • Open terminal/command prompt
+  • Navigate to project folder
+  • Run:
+    cd backend
+    pip install -r requirements.txt
+    python init_database.py
+  
+  This creates:
+    ✓ Database: nnhs_attendance
+    ✓ Admin account: admin / admin123
+    ✓ Teacher account: teacher1 / teacher123
+    ✓ 6 sample classrooms (Grade 7-12)
+    ✓ 3 sample students
+  
+STEP 3: START BACKEND
+  • In backend folder, run:
+    python app.py
+  
+  • You should see:
+    ✓ Connecting to MySQL: root@localhost/nnhs_attendance
+    * Running on http://127.0.0.1:5000
+  
+STEP 4: START FRONTEND
+  • Open NEW terminal window
+  • Navigate to project folder
+  • Run:
+    npm install  (first time only)
+    npm run dev
+  
+  • You should see:
+    ➜ Local: http://localhost:5173/
+  
+STEP 5: OPEN BROWSER
+  • Go to: http://localhost:5173
+  • Login with:
+    - Admin: admin / admin123
+    - Teacher: teacher1 / teacher123
+
+================================================================================
+ADDING NEW CLASSROOMS
+================================================================================
+
+Option 1: Using Helper Script (Easiest)
+  cd backend
+  python add_classroom.py
+  (Follow the prompts)
+
+Option 2: Using phpMyAdmin
+  • Go to: http://localhost/phpmyadmin
+  • Select "nnhs_attendance" database
+  • Click "classrooms" table → Insert
+  • Fill in the form and click "Go"
+
+Option 3: Using API
+  • Use Postman or curl to POST to:
+    http://localhost:5000/api/classrooms
+  • See README.md for examples
+
+================================================================================
+STUDENT ID FORMAT
+================================================================================
+
+  ✅ CORRECT: 123456789012 (12 digits only)
+  ✅ CORRECT: 987654321098 (12 digits only)
+  
+  ❌ WRONG: NNHS-123456 (no prefix allowed)
+  ❌ WRONG: 12345 (too short)
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Backend won't start:
+  • Check if XAMPP MySQL is running
+  • Verify credentials in backend/app.py (lines 20-23)
+  • Try: pip install -r requirements.txt --force-reinstall
+
+Frontend won't start:
+  • Try: npm install
+  • Clear cache: npm cache clean --force
+  • Reinstall: rm -rf node_modules && npm install
+
+Can't login:
+  • Make sure backend is running (python app.py)
+  • Check browser console (F12) for errors
+  • Reset admin password: python init_database.py
+
+Teacher can't see students:
+  • Students must be assigned to the classroom
+  • Teacher must have a schedule for that classroom
+  • Verify in Admin → Add Schedule
+
+================================================================================
+For detailed documentation, see README.md
+================================================================================
