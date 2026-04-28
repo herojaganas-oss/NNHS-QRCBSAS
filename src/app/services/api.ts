@@ -1,5 +1,17 @@
 // API service for backend communication
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const getApiUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  
+  // If running on Vercel or production environment
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+    return 'https://web-production-fc7223.up.railway.app/api';
+  }
+  
+  // Development or if VITE_API_URL is set
+  return envUrl || 'http://localhost:5000/api';
+};
+
+const API_BASE_URL = getApiUrl();
 
 export interface ApiResponse<T> {
   data?: T;
