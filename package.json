@@ -5,7 +5,7 @@
   "packageManager": "pnpm@9.1.0",
   "type": "module",
   "engines": {
-    "node": "18.x",
+    "node": "24.x",
     "pnpm": "9.x"},
   "scripts": {
     "dev": "vite",
