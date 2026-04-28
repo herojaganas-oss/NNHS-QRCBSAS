@@ -1,17 +1,18 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "nnhs-qrcbsams",
   "private": true,
-  "version": "0.0.1",
-  "packageManager": "pnpm@10.0.0",
+  "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": "24.x",
-    "pnpm": "9.x"},
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "7.3.5",
@@ -78,22 +79,5 @@
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
-  },
-  "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "react-dom": {
-      "optional": true
-    }
-  },
-  "pnpm": {
-    "overrides": {
-      "vite": "6.3.5"
-    }
   }
 }

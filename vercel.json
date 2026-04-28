@@ -1,7 +1,6 @@
 {
-  "buildCommand": "pnpm install && pnpm run build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "pnpm install",
   "env": {
     "VITE_API_URL": "https://web-production-fc7223.up.railway.app"
   },
