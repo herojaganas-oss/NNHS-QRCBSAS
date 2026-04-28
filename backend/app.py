@@ -18,7 +18,7 @@ app = Flask(__name__)
 # ============================================================================
 
 MYSQL_USER = 'root'                    # Your MySQL username
-MYSQL_PASSWORD = hubTVCoOMjBRSSdJLpIARuIrYdRhBpEc'                    # Your MySQL password (empty for XAMPP/WAMP)
+MYSQL_PASSWORD = ''                    # Your MySQL password (empty for XAMPP/WAMP)
 MYSQL_HOST = 'mysql.railway.internal'               # Usually localhost
 MYSQL_DB = 'railway'          # Database name
 
