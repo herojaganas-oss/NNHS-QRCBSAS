@@ -20,7 +20,7 @@ app = Flask(__name__)
 MYSQL_USER = 'root'                    # Your MySQL username
 MYSQL_PASSWORD = hubTVCoOMjBRSSdJLpIARuIrYdRhBpEc'                    # Your MySQL password (empty for XAMPP/WAMP)
 MYSQL_HOST = 'mysql.railway.internal'               # Usually localhost
-MYSQL_DB = 'nnhs_attendance'          # Database name
+MYSQL_DB = 'railway'          # Database name
 
 # Generate a random secret key for production:
 # python -c "import secrets; print(secrets.token_hex(32))"
