@@ -2,7 +2,11 @@
   "name": "@figma/my-make-file",
   "private": true,
   "version": "0.0.1",
+  "packageManager": "pnpm@9.1.0",
   "type": "module",
+  "engines": {
+    "node": "18.x",
+    "pnpm": "9.x"},
   "scripts": {
     "dev": "vite",
     "build": "vite build"
